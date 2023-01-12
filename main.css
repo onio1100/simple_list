@@ -1,0 +1,297 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --darker: #231123ff;
+    --dark: #82204aff;
+    --gray: #558c8cff;
+    --yelow: #e8db7dff;
+    --blue: #eff7ffff;
+    font-size: 16px;
+}
+body {
+   background-color: var(--darker);
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 90%;
+    border-radius: 1rem;
+    margin: 10px 0;
+  }
+  body::-webkit-scrollbar-thumb {
+    background: var(--yelow);
+    border-radius: 1rem; 
+    margin: 10px 0;
+  }
+  .text::-webkit-scrollbar, .full-note-text-open::-webkit-scrollbar{
+    width: 1px;
+  }
+.main-content {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: var(--darker);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    padding: 10% 0;
+}
+.list{
+    max-width: 900px;
+    width: 100%;
+    min-height: 100px;
+    background-color: rgb(56, 27, 65);
+    padding: 0.5em 0.5em 0.5em;
+    background-color: var(--darker);
+}
+.list-header {
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    position: relative;
+    overflow: visible;
+    display: block;
+    background-color: var(--blue);
+    border-radius: 1rem;
+}
+.text {
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow-y: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    resize: none;
+    border: none;
+    outline: none;
+    font-size: 2.5rem;
+    padding: 0.5em;
+    padding-right: 45px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+    background-color: var(--blue);
+    color: var(--darker);
+}
+.add-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    overflow: visible;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.5rem;
+    padding: 0 0.1em;
+    align-items: flex-start;
+    background-color: transparent;
+    color: var(--darker);
+    cursor: pointer;
+}
+.list-content {
+    width: 100%;
+    max-height: 10000px;
+    height: auto;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.list-element{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: transparent;
+    margin: 0.5em 0 0;
+}
+.list-text {
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2.5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 1rem;
+    color: var(--darker);
+    z-index: 2;
+    background-color: var(--yelow);
+    padding: 0.5em;
+    padding-right: 80px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+}
+.done {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.5rem;
+    padding: 0 0.1em;
+    align-items: center;
+    background-color: transparent;
+    overflow: visible;
+    height: 100%;
+    z-index: 5;
+    color: var(--darker);
+    cursor: pointer;
+}
+.delete{
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: visible;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.5rem;
+    padding: 0 0.1em;
+    align-items: center;
+    background-color: transparent;
+    z-index: 5;
+    color: var(--darker);
+    cursor: pointer;
+}
+.full-note {
+    width: 0;
+    height: 0;
+    color: transparent;
+    background-color: transparent;
+    font-size: 0;
+}
+.full-note-text-open {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    min-height: 200px;
+    max-height: 50vh;
+    overflow: auto;
+    background-color: var(--yelow);
+    color: var(--darker);
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    z-index: 10;
+    font-family: 'Inconsolata', monospace;
+    padding: 0.5em;
+    outline: none;
+    resize: none;
+    border: none;
+}
+.full-note-backgroud-open {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--darker);
+    opacity: 0.7;
+    z-index: 7;
+}
+.full-note-buttons-on {
+    width: 100%;
+    max-width: 1000px;
+    height: 10%;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: transparent;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    color: var(--yelow);
+    font-size: 2.5rem;
+}
+.edit, .done2, .delete2, .save {
+    width: 40px;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 0.2em;
+} 
+i {
+    user-select: none;
+    pointer-events: none;
+}
+.text-on{
+    text-decoration: line-through;
+}
+
+@media only screen and (max-width: 900px) {
+    .main-content {
+        padding: 5px;
+    }
+    :root {
+        font-size: 13px;
+    }
+    .done, .delete, .add-button, .delete2, .done2, .edit {
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width: 740px) {
+    :root {
+        font-size: 10px;
+    }
+    .done, .delete, .add-button, .delete2, .done2, .edit {
+        font-size: 30px;
+    }
+    .list-header{
+        min-height: 150px;
+    }
+    .list-element{
+        height: 75px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    :root {
+        font-size: 8px;
+    }
+    .done, .delete, .add-button, .delete2, .done2, .edit, .save {
+        font-size: 27px;
+    }
+    .list-header{
+        min-height: 100px;
+    }
+    .list-element{
+        height: 50px;
+        background-color: var(--yelow);
+        border-radius: 1rem;
+        
+    }
+    .list-text {
+        display: inline-block;
+        width: calc(100% - 80px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+        padding: 15px 0.2em 15px 0.2em;
+    }
+}
